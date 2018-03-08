@@ -4,7 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use app\models\Config;
-use app\modules\admin\search\HeaderImageSearch;
+use app\modules\admin\search\ImageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -13,7 +13,7 @@ use yii\web\UploadedFile;
 /**
  * HeaderImageController implements the CRUD actions for Config model.
  */
-class HeaderImageController extends Controller
+class ImageController extends Controller
 {
     /**
      * @inheritdoc
@@ -36,7 +36,7 @@ class HeaderImageController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new HeaderImageSearch();
+        $searchModel = new ImageSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -67,7 +67,6 @@ class HeaderImageController extends Controller
     {
         $model = new Config();
         $model->description='headerImage';
-        
         if ($model->load(Yii::$app->request->post())) {
             $model->fileUpload = UploadedFile::getInstance($model, 'fileUpload');
             $model->save();

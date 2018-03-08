@@ -7,6 +7,10 @@ use app\widgets\Alert;
 use yii\helpers\Html;
 use app\modules\halcyon\assets\HalcyonAsset;
 
+Yii::$app->assetManager->bundles['yii\web\JqueryAsset'] = [
+    'sourcePath' => null,
+    'js' => ['jquery.js' => 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'],
+];
 HalcyonAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -28,7 +32,6 @@ HalcyonAsset::register($this);
         <?= Alert::widget() ?>
         <?= $content ?>
 <?= $this->render('_footer') ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <?php $this->endBody() ?>
 </body>
 </html>

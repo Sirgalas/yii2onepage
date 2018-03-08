@@ -1,5 +1,6 @@
 <?php 
 use app\modules\halcyon\widgets\Menu;
+use app\models\Config;
 ?>
 
 <header id="home">
@@ -16,7 +17,7 @@ use app\modules\halcyon\widgets\Menu;
             </div>
         </div>
     </nav>
-    <section class="hero" id="hero" style="background: url('../img/hero-bg.jpg') no-repeat center center;">
+    <section class="hero" id="hero" style="background: url(<?= (new Config())->uploadPath().Yii::$app->config->get('headerImage')?>) no-repeat center center;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-right navicon">
@@ -25,13 +26,12 @@ use app\modules\halcyon\widgets\Menu;
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center inner">
-                    <h1 class="animated fadeInDown">HALCYON<span>DAYS</span></h1>
-                    <p class="animated fadeInUp delay-05s">An exclusive HTML5/CSS3 freebie for <em>Codrops</em></p>
+                    <?= Yii::$app->config->get('шапка'); ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
-                    <a href="http://tympanus.net/codrops/?p=19439" class="learn-more-btn">Back to the article</a>
+                    <?= Yii::$app->config->get('ссылка шапки'); ?>
                 </div>
             </div>
         </div>

@@ -31,9 +31,9 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Настройки шапки', 'icon' => 'file-code-o', 'url' => ['/header']],
+                    ['label' => 'Настройки текста', 'icon' => 'file-code-o', 'url' => ['/text']],
                     ['label' => 'Настройки меню шапки', 'icon' => 'file-code-o', 'url' => ['/menu']],
-                    ['label' => 'Настройки картинки шапки', 'icon' => 'file-code-o', 'url' => ['/header-image']],
+                    ['label' => 'Настройки картинки', 'icon' => 'file-code-o', 'url' => ['/image']],
                 ],
             ]
         ) ?>

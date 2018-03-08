@@ -4,17 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\modules\admin\search\HeaderImageSearch */
+/* @var $searchModel app\modules\admin\search\ConfigSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Картинка шапки';
+$this->title = 'Текст на странице';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="config-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
     <p>
-        <?= Html::a('Добавить картинку', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -22,15 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            [
-                'attribute' => 'text',
-                'format' => 'raw',
-                'value'=>function($model){
-                    return $model->imageUrl;
-                }
-            ],
-
+            'params',
+            'text',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

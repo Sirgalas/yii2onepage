@@ -28,13 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            [
-                'attribute' => 'text',
-                'format' => 'raw',
-                'value'=>function()use($model){
-                    return $model->imageUrl;
-                }
-            ]
+            'params',
+            'text',
         ],
     ]) ?>
 

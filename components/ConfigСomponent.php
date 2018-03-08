@@ -20,7 +20,7 @@ class ConfigСomponent extends Component
         $items = Config::find()->all();
         foreach ($items as $item){
             $param=$item->text;
-            $this->data[$item->param] = $param;
+            $this->data[$item->params] = $param;
         }
         parent::init();
     }

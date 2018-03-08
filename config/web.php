@@ -12,12 +12,8 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
-        'assetManager' => [
-            'bundles' => [
-                'yii\web\JqueryAsset' => [
-                    'js'=>[]
-                ],
-            ],
+        'config'=> [
+            'class' => 'app\components\ConfigСomponent'
         ],
         'request' => [
             'cookieValidationKey' => 'sdcZgq90J2mjT1WloziPRlr76jSja5JE',
@@ -51,7 +47,8 @@ $config = [
                 'admin'=>'admin/default/index',
                 'header'=>'admin/header/index',
                 'menu'=>'admin/menu/index',
-                'header-image'=>'admin/header-image/index'
+                'image'=>'admin/image/index',
+                'text'=>'admin/config/index'
             ],
         ],
 

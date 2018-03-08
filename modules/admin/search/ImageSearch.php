@@ -10,7 +10,7 @@ use app\models\Config;
 /**
  * HeaderImageSearch represents the model behind the search form of `app\models\Config`.
  */
-class HeaderImageSearch extends Config
+class ImageSearch extends Config
 {
     /**
      * @inheritdoc
@@ -64,7 +64,7 @@ class HeaderImageSearch extends Config
         ]);
 
         $query->andFilterWhere(['like', 'params', $this->params])
-            ->andFilterWhere(['like', 'text', $this->text])
+            ->andFilterWhere(['like', 'text', $this->text]);
 
         return $dataProvider;
     }

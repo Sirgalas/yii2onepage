@@ -12,15 +12,15 @@ use kartik\file\FileInput;
 <div class="config-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'params')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model,'params')->textInput() ?>
 
     <?= $form->field($model, 'fileUpload')->widget(FileInput::class, [
             'options' => ['accept' => 'image/*'],
     ]); ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Создать', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
