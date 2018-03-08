@@ -13,6 +13,8 @@ use yii\helpers\Url;
  * @property string $text
  * @property string $description
  * @property array $fileUpload
+ * @property string $icon;
+ * @property string $image
  */
 class Config extends \yii\db\ActiveRecord
 {
@@ -82,7 +84,8 @@ class Config extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['params', 'description'], 'string', 'max' => 255],
+            [['params', 'description','image'], 'string', 'max' => 255],
+            [['icon'], 'string', 'max' => 100],
             ['text','string'],
             [['fileUpload'],'file','skipOnEmpty' => true,'extensions' => 'jpg, png'],
 
@@ -99,6 +102,8 @@ class Config extends \yii\db\ActiveRecord
             'params' => 'Params',
             'text' => 'Text',
             'description' => 'Description',
+            'icon'  => 'Icon',
+            'image' =>  'Image'
         ];
     }
 }
