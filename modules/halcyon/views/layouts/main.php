@@ -24,9 +24,11 @@ HalcyonAsset::register($this);
 </head>
 <body id="top">
 <?php $this->beginBody() ?>
+<?= $this->render('_header') ?>
         <?= Alert::widget() ?>
         <?= $content ?>
 <?= $this->render('_footer') ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <?php $this->endBody() ?>
 </body>
 </html>

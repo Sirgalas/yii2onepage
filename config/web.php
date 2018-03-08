@@ -12,6 +12,13 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'js'=>[]
+                ],
+            ],
+        ],
         'request' => [
             'cookieValidationKey' => 'sdcZgq90J2mjT1WloziPRlr76jSja5JE',
         ],
@@ -43,7 +50,8 @@ $config = [
                 ''=>'halcyon/default/index',
                 'admin'=>'admin/default/index',
                 'header'=>'admin/header/index',
-                'menu'=>'admin/menu/index'
+                'menu'=>'admin/menu/index',
+                'header-image'=>'admin/header-image/index'
             ],
         ],
 

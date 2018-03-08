@@ -14,6 +14,11 @@ use Yii;
  */
 class Config extends \yii\db\ActiveRecord
 {
+    const PATH='images';
+    const URL='images';
+
+    public $fileUpload;
+
     public static $menuItem=[
         0=>'intro',
         1=>'features',
@@ -30,6 +35,37 @@ class Config extends \yii\db\ActiveRecord
     public function getItem(){
         return self::$menuItem[$this->params];
     }
+
+    public function uploadPath(){
+        return Yii::getAlias('@app').'/'.self::PATH . '/';
+    }
+
+    public function getImagePath(){
+        return  $this->uploadPath() . '/'.$this->text;
+    }
+
+    public function getImageUrl(){
+        return Yii::$app->homeUrl . '/'.$this->text;
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->fileUpload->saveAs( $this->uploadPath(). $this->fileUpload->baseName . '.' . $this->fileUpload->extension);
+            $result=$this->fileUpload->baseName . '.' . $this->fileUpload->extension;
+            $this->fileUpload=null;
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function beforeSave($insert)
+    {
+        if(isset($fileUpload))
+            $this->text=$this->upload();
+    }
+
     /**
      * @inheritdoc
      */
@@ -45,6 +81,8 @@ class Config extends \yii\db\ActiveRecord
     {
         return [
             [['params', 'text', 'description'], 'string', 'max' => 255],
+            [['fileUploade'],'file','skipOnEmpty' => true,'extensions' => 'jpg, png'],
+
         ];
     }
 
