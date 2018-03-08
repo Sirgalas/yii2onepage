@@ -23,16 +23,33 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('К списку', ['index', 'id' => $model->id], ['class' => 'btn btn-default']) ?>
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'params',
-            'text:ntext',
+            [
+                'attribute' => 'text',
+                'format' => 'raw'
+            ],
             'description',
-            'icon',
+            [
+                'attribute'=>'icon',
+                'format'=>'raw',
+                'value'=>function()use($model){
+                    return Html::tag('span','',['class'=>'fa '.$model->icon]);
+                }
+            ],
+            'count',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value'=>function()use($model){
+                    return Html::img('/'.$model->imagePath,['width'=>200]);
+                }
+            ],
         ],
     ]) ?>
 

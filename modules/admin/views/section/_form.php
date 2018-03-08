@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
+use dosamigos\tinymce\TinyMce;
+use sjaakp\symbolpicker\SymbolPicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Config */
@@ -15,15 +17,26 @@ use kartik\file\FileInput;
 
     <?= $form->field($model, 'params')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'text')->widget(TinyMce::class, [
+        'options' => ['rows' => 6],
+        'language' => 'ru',
+        'clientOptions' => [
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste"
+            ],
+            'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        ]
+    ]); ?>
 
-    <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'icon')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'icon')->widget(SymbolPicker::class) ?>
 
     <?= $form->field($model, 'fileUpload')->widget(FileInput::class, [
         'options' => ['accept' => 'image/*'],
     ]); ?>
+
+    <?= $form->field($model,'count')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

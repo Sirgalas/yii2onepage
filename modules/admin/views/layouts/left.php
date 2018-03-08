@@ -34,6 +34,7 @@
                     ['label' => 'Настройки текста', 'icon' => 'file-code-o', 'url' => ['/text']],
                     ['label' => 'Настройки меню шапки', 'icon' => 'file-code-o', 'url' => ['/menu']],
                     ['label' => 'Настройки картинки', 'icon' => 'file-code-o', 'url' => ['/image']],
+                    ['label' => 'Настройки секции', 'icon' => 'file-code-o', 'url' => ['/section']],
                 ],
             ]
         ) ?>

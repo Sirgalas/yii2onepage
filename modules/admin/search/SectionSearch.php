@@ -2,15 +2,16 @@
 
 namespace app\modules\admin\search;
 
+use app\modules\admin\models\Section;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Config;
+//use app\models\Config;
 
 /**
  * SectionSearch represents the model behind the search form of `app\models\Config`.
  */
-class SectionSearch extends Config
+class SectionSearch extends Section
 {
     /**
      * @inheritdoc
@@ -41,7 +42,7 @@ class SectionSearch extends Config
      */
     public function search($params)
     {
-        $query = Config::find();
+        $query = Section::find();
 
         // add conditions that should always apply here
 

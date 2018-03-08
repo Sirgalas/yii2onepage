@@ -48,7 +48,8 @@ $config = [
                 'header'=>'admin/header/index',
                 'menu'=>'admin/menu/index',
                 'image'=>'admin/image/index',
-                'text'=>'admin/config/index'
+                'text'=>'admin/config/index',
+                'section'=>'admin/section/index'
             ],
         ],
 

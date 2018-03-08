@@ -1,4 +1,9 @@
+<?php
 
+use app\modules\halcyon\widgets\Icon;
+use app\modules\halcyon\widgets\Response;
+use app\models\Config;
+?>
 <section class="intro text-center section-padding" id="intro">
     <div class="container">
         <div class="row">
@@ -12,32 +17,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="arrow">Love what you do, and you'll do it well</h1>
+                <h1 class="arrow"><?= strip_tags(Yii::$app->config->get('загаловок секции с иконками')) ?></h1>
                 <div class="features-wrapper">
-                    <div class="col-md-4 wp2">
-                        <div class="icon">
-                            <i class="fa fa-laptop shadow"></i>
-                        </div>
-                        <h2>Digital Design</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                            primis in faucibus.</p>
-                    </div>
-                    <div class="col-md-4 wp2 delay-05s">
-                        <div class="icon">
-                            <i class="fa fa-code shadow"></i>
-                        </div>
-                        <h2>Web Development</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                            primis in faucibus.</p>
-                    </div>
-                    <div class="col-md-4 wp2 delay-1s">
-                        <div class="icon">
-                            <i class="fa fa-heart shadow"></i>
-                        </div>
-                        <h2>Creative Direction</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                            primis in faucibus.</p>
-                    </div>
+                    <?= Icon::widget(); ?>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -48,7 +30,7 @@
     <div class="container-fluid nopadding responsive-services">
         <div class="wrapper">
             <div class="iphone">
-                <div class="wp3"></div>
+                <div class="wp3" style="background: url(<?= (new Config())->uploadPath().Yii::$app->config->get('картинка блока с условиями'); ?>) no-repeat center center;"></div>
             </div>
             <div class="fluid-white"></div>
         </div>
@@ -57,20 +39,7 @@
                 <div class="col-md-5 col-md-offset-7">
                     <div id="servicesSlider">
                         <ul class="slides">
-                            <li>
-                                <h1 class="arrow">Responsive Design Specialists</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero. </p>
-                                <p>
-                                    Mauris ultrices odio vitae nulla ultrices iaculis. Nulla rhoncus odio eu lectus faucibus facilisis. Maecenas ornare augue vitae sollicitudin accumsan. </p>
-                                <p>Etiam eget libero et erat eleifend consectetur a nec lectus. Sed id tellus lorem. Suspendisse sed venenatis odio, quis lobortis eros.</p>
-                            </li>
-                            <li>
-                                <h1 class="arrow">Bootstrap Professionals</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero. </p>
-                                <p>
-                                    Mauris ultrices odio vitae nulla ultrices iaculis. Nulla rhoncus odio eu lectus faucibus facilisis. Maecenas ornare augue vitae sollicitudin accumsan. </p>
-                                <p>Etiam eget libero et erat eleifend consectetur a nec lectus. Sed id tellus lorem. Suspendisse sed venenatis odio, quis lobortis eros.</p>
-                            </li>
+                            <?= Response::widget(); ?>
                         </ul>
                     </div>
                 </div>
@@ -78,11 +47,11 @@
         </div>
     </div>
 </section>
-<section class="swag text-center">
+<section class="swag text-center" style="background: url(<?= (new Config())->uploadPath().Yii::$app->config->get('перед каруселью'); ?>) no-repeat center center;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h1>I got 99 Problems<span>but <em>design</em> 'aint one</span></h1>
+                <?= Yii::$app->config->get('текст перед каруселью'); ?>
                 <a href="#portfolio" class="down-arrow-btn"><i class="fa fa-chevron-down"></i></a>
             </div>
         </div>

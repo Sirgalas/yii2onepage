@@ -23,13 +23,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('К списку', ['index', 'id' => $model->id], ['class' => 'btn btn-default']) ?>
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'params',
-            'text',
+            [
+                'attribute' => 'text',
+                'format' => 'raw'
+            ],
         ],
     ]) ?>
 

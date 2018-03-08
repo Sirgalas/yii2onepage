@@ -3,7 +3,7 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\Config;
+use app\modules\admin\models\Section;
 use app\modules\admin\search\SectionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -21,7 +21,7 @@ class SectionController extends Controller
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -64,7 +64,7 @@ class SectionController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Config();
+        $model = new Section();
         $model->description='section';
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -75,7 +75,7 @@ class SectionController extends Controller
     }
 
     /**
-     * Updates an existing Config model.
+     * Updates an existing Section model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -95,7 +95,7 @@ class SectionController extends Controller
     }
 
     /**
-     * Deletes an existing Config model.
+     * Deletes an existing Section model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -112,12 +112,12 @@ class SectionController extends Controller
      * Finds the Config model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Config the loaded model
+     * @return Section the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Config::findOne($id)) !== null) {
+        if (($model = Section::findOne($id)) !== null) {
             return $model;
         }
 

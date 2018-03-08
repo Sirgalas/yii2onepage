@@ -31,7 +31,7 @@ use app\models\Config;
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
-                    <?= Yii::$app->config->get('ссылка шапки'); ?>
+                    <a class="learn-more-btn" href="#"><?= strip_tags(Yii::$app->config->get('ссылка шапки')); ?></a>
                 </div>
             </div>
         </div>

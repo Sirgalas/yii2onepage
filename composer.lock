@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a309ddf6305a68a911d2cb16afe68ff",
+    "content-hash": "0b0058b47a32dd7045d9132d814bae85",
     "packages": [
         {
             "name": "2amigos/yii2-tinymce-widget",
@@ -910,6 +910,50 @@
                 "yii"
             ],
             "time": "2017-01-11T14:05:47+00:00"
+        },
+        {
+            "name": "sjaakp/yii2-symbol-picker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sjaakp/yii2-symbol-picker.git",
+                "reference": "80cd83f2782f93cd91221b5c61886a87d6ff486c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sjaakp/yii2-symbol-picker/zipball/80cd83f2782f93cd91221b5c61886a87d6ff486c",
+                "reference": "80cd83f2782f93cd91221b5c61886a87d6ff486c",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "sjaakp\\symbolpicker\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sjaak Priester",
+                    "email": "sjaak@sjaakpriester.nl",
+                    "homepage": "http://sjaakpriester.nl"
+                }
+            ],
+            "description": "Widget to select Font Awesome symbol for Yii2.",
+            "keywords": [
+                "extension",
+                "font-awesome",
+                "widget",
+                "yii",
+                "yii2"
+            ],
+            "time": "2015-08-06T12:11:41+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3959,7 +4003,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "kartik-v/yii2-widget-select2": 20,
-        "kartik-v/yii2-widget-fileinput": 20
+        "kartik-v/yii2-widget-fileinput": 20,
+        "sjaakp/yii2-symbol-picker": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

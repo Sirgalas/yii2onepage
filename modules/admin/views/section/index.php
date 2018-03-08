@@ -24,11 +24,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'params',
-            'text:ntext',
-            'icon',
-
+            [
+                'attribute' => 'text',
+                'format' => 'raw'
+            ],
+            'description',
+            [
+                'attribute'=>'icon',
+                'format'=>'raw',
+                'value'=>function($model){
+                    return Html::tag('span','',['class'=>'fa '.$model->icon]);
+                }
+            ],
+            'count',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

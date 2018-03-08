@@ -22,7 +22,8 @@
         "dektrium/yii2-user": "^0.9.13",
         "2amigos/yii2-tinymce-widget": "~1.1",
         "kartik-v/yii2-widget-select2": "@dev",
-        "kartik-v/yii2-widget-fileinput": "@dev"
+        "kartik-v/yii2-widget-fileinput": "@dev",
+        "sjaakp/yii2-symbol-picker": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
