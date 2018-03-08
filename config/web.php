@@ -41,7 +41,9 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 ''=>'halcyon/default/index',
-                'admin'=>'admin/default/index'
+                'admin'=>'admin/default/index',
+                'header'=>'admin/header/index',
+                'menu'=>'admin/menu/index'
             ],
         ],
 

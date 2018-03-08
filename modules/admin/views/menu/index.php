@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\modules\admin\search\ConfigSearch */
+/* @var $searchModel app\modules\admin\search\MenuSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Configs';
+$this->title = 'Настройки меню';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="config-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Config', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить пункт меню', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

@@ -14,6 +14,22 @@ use Yii;
  */
 class Config extends \yii\db\ActiveRecord
 {
+    public static $menuItem=[
+        0=>'intro',
+        1=>'features',
+        2=>'responsive',
+        3=>'portfolio',
+        4=>'team',
+        5=>'contact'
+    ];
+
+    public function getAllitem(){
+        return self::$menuItem;
+    }
+
+    public function getItem(){
+        return self::$menuItem[$this->params];
+    }
     /**
      * @inheritdoc
      */
