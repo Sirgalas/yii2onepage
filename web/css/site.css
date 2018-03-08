@@ -96,6 +96,15 @@ a.desc:after {
     border: none;
 }
 
+.site-login{
+    width: 900px;
+    margin: 50px auto;
+}
+
+.site-login h1{
+    text-align: center;
+}
+
 @media(max-width:767px) {
     .nav li > form > button.logout {
         display:block;
