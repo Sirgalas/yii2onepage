@@ -31,7 +31,7 @@ use app\models\Config;
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
-                    <a class="learn-more-btn" href="#"><?= strip_tags(Yii::$app->config->get('ссылка шапки')); ?></a>
+                    <a class="learn-more-btn" href="<?= strip_tags(Yii::$app->config->get('ссылка шапки')); ?>"><?= strip_tags(Yii::$app->config->get('ссылка текст шапки')); ?></a>
                 </div>
             </div>
         </div>

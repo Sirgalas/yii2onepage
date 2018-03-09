@@ -38,6 +38,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             'count',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value'=>function($model){
+                    return Html::img('/'.$model->imagePath,['width'=>200]);
+                }
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

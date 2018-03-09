@@ -8,6 +8,7 @@ use app\modules\admin\search\SectionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * SectionController implements the CRUD actions for Config model.
@@ -66,8 +67,15 @@ class SectionController extends Controller
     {
         $model = new Section();
         $model->description='section';
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            try{
+                $model->fileUpload = UploadedFile::getInstance($model, 'fileUpload');
+                $model->save();
+                return $this->redirect(['view', 'id' => $model->id]);
+            }catch (\Exception $e){
+                Yii::debug($e->getMessage());
+            }
+
         }
         return $this->render('create', [
             'model' => $model,
@@ -85,8 +93,14 @@ class SectionController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) ) {
+            try{
+                $model->fileUpload = UploadedFile::getInstance($model, 'fileUpload');
+                $model->save();
+                return $this->redirect(['view', 'id' => $model->id]);
+            }catch (\Exception $e){
+                Yii::debug($e->getMessage());
+            }
         }
 
         return $this->render('update', [
