@@ -32,3 +32,5 @@ tests/_support/_generated
 #vagrant folder
 /.vagrant
 .htaccess
+/config/db.php
+/web/.htaccess
